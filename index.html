@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hidromantención | Salas de bombas</title>
+  <meta name="description" content="Instalación, mantención y modernización de salas de bombas. Presión segura, edificio tranquilo." />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Hidromantención" />
+  <meta property="og:description" content="Instalación, mantención y modernización de salas de bombas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tusitio.github.io" />
+  <meta property="og:image" content="logo.png" />
+
+  <link rel="icon" href="logo.png" />
+
+  <style>
+    :root{
+      --bg: #0b1320;           /* fondo oscuro */
+      --text: #e8eefc;
+      --muted: #a8b3cf;
+      --brand: #0b2a6b;        /* azul del texto del logo */
+      --brand-2: #19aee6;      /* celeste del borde de la gota */
+      --accent: #e3362a;       /* rojo del rayo */
+      --card: #0f1830;
+      --border: #21304f;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; color:var(--text); background:radial-gradient(1200px 800px at 80% -20%, rgba(25,174,230,.08), transparent 60%), var(--bg); line-height:1.6}
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto}
+    .container{width:min(1120px, 92%); margin-inline:auto}
+    .btn{display:inline-block; padding:.9rem 1.2rem; border-radius:14px; font-weight:700; border:1px solid transparent; transition:.2s ease; cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg, var(--brand-2), var(--accent)); color:#fff; box-shadow:0 8px 20px rgba(25,174,230,.25)}
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-ghost{background:transparent; border:1px solid var(--border); color:var(--text)}
+    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(10px); background:rgba(11,19,32,.6); border-bottom:1px solid var(--border); z-index:10}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:.7rem 0}
+    .nav .brand{display:flex; align-items:center; gap:.7rem; font-weight:900; letter-spacing:.3px; color:var(--text)}
+    .nav .brand img{width:42px; height:auto; border-radius:6px}
+    .nav .brand span{color:var(--brand)}
+    .nav ul{display:flex; gap:1rem; list-style:none; margin:0; padding:0}
+    .nav a{color:var(--muted)}
+    .nav .cta-head{margin-left:.5rem}
+
+    .hero{padding:72px 0 48px; text-align:center}
+    .eyebrow{display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .6rem; background:rgba(25,174,230,.12); color:#cfe0ff; border:1px solid var(--border); border-radius:999px; font-size:.85rem}
+    h1{font-size:clamp(2rem, 5vw, 3.25rem); line-height:1.1; margin:16px auto 10px; letter-spacing:.2px; color:#ffffff}
+    .sub{color:var(--muted); font-size:clamp(1rem, 2.2vw, 1.2rem); max-width:850px; margin:0 auto 28px}
+    .cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+
+    .logos{opacity:.9; border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:18px 0; margin-top:28px}
+    .logos .row{display:grid; grid-template-columns:repeat(5,1fr); gap:18px; align-items:center}
+    .logos img{filter:grayscale(1) contrast(1.2) brightness(.9); opacity:.9}
+
+    .features{padding:64px 0}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); border:1px solid var(--border); border-radius:16px; padding:20px}
+    .card h3{margin-top:10px; margin-bottom:6px; color:#ffffff}
+    .icon{width:40px; height:40px; display:grid; place-items:center; border-radius:10px; background:linear-gradient(135deg, var(--brand), var(--accent)); color:#fff; font-weight:900}
+
+    .section{padding:64px 0}
+    .split{display:grid; grid-template-columns: 1.1fr .9fr; gap:32px; align-items:center}
+    .tag{font-size:.85rem; color:#c8d4f0}
+
+    .testimonials{padding:64px 0}
+    .quo{font-size:1.1rem; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:22px}
+    .quo .who{display:flex; align-items:center; gap:12px; margin-top:14px; color:var(--muted)}
+    .avatar{width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg, var(--brand-2), var(--brand))}
+
+    .pricing{padding:64px 0}
+    .plan{background:linear-gradient(180deg, rgba(11,42,107,.12), rgba(11,42,107,0)); border:1px solid var(--border); border-radius:18px; padding:24px}
+    .price{font-size:2.2rem; font-weight:900; color:#fff}
+    .list{list-style:none; padding:0; margin:12px 0}
+    .list li{display:flex; align-items:center; gap:.6rem; margin:8px 0; color:var(--muted)}
+    .check{width:18px; height:18px; border-radius:6px; display:inline-grid; place-items:center; background:linear-gradient(135deg, var(--brand-2), var(--accent)); color:#091324; font-weight:900}
+
+    .lead{padding:64px 0; text-align:center}
+
+    .contact{padding:64px 0}
+    form{display:grid; gap:12px}
+    input, textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--border); background:#0f1726; color:var(--text)}
+    label{font-size:.9rem; color:var(--muted)}
+
+    footer{border-top:1px solid var(--border); padding:28px 0; color:var(--muted)}
+
+    /* Botón flotante Contáctanos */
+    .float-contact{
+      position:fixed; right:18px; bottom:18px; z-index:20;
+      padding:.9rem 1rem; border-radius:999px; font-weight:800;
+      background:linear-gradient(135deg, var(--brand-2), var(--accent)); color:white;
+      box-shadow:0 10px 24px rgba(0,0,0,.25);
+    }
+
+    @media (max-width: 900px){
+      .grid-3{grid-template-columns:1fr}
+      .split{grid-template-columns: 1fr; text-align:center}
+      .logos .row{grid-template-columns:repeat(3,1fr)}
+      .nav ul{display:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="float-contact" href="#contacto" aria-label="Ir a contacto">Contáctanos</a>
+
+  <header>
+    <div class="container nav" role="navigation" aria-label="principal">
+      <a class="brand" href="#" aria-label="Inicio">
+        <img src="logo.png" alt="Logo Hidromantención" />
+        <span>Hidromantención</span>
+      </a>
+      <div style="display:flex; align-items:center; gap:.6rem">
+        <ul>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <a class="btn btn-primary cta-head" href="#contacto">Contáctanos</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container" id="inicio">
+      <span class="eyebrow">💧 Salas de Bombas • Hidráulica • Electricidad</span>
+      <h1>Instalación, mantención y modernización de salas de bombas</h1>
+      <p class="sub">Presión segura, edificio tranquilo. Expertos en salas de bombas para comunidades y edificios. Respuesta rápida y soporte profesional.</p>
+      <div class="cta">
+        <a href="#contacto" class="btn btn-primary">Contáctanos</a>
+        <a href="#beneficios" class="btn btn-ghost">Ver servicios</a>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS / FEATURES -->
+    <section class="features container" id="beneficios">
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">1</div>
+          <h3>Ahorro y continuidad</h3>
+          <p>Plan de mantención preventiva para reducir fallas y cortes. Reporte técnico en cada visita.</p>
+        </article>
+        <article class="card">
+          <div class="icon">2</div>
+          <h3>Respuesta de emergencia</h3>
+          <p>Atención prioritaria en emergencias eléctricas o hidráulicas de la sala de bombas.</p>
+        </article>
+        <article class="card">
+          <div class="icon">3</div>
+          <h3>Repuestos y mejoras</h3>
+          <p>Instalación de hidropack, presostatos, contactores, variadores y repuestos originales.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOQUE EXPLICATIVO -->
+    <section class="section container">
+      <div class="split">
+        <div>
+          <span class="tag">Cómo trabajamos</span>
+          <h2>Diagnóstico claro y presupuesto transparente</h2>
+          <p>1) Visita y diagnóstico, 2) propuesta con materiales y mano de obra, 3) ejecución y entrega con pruebas de presión y seguridad.</p>
+          <div class="cta" style="justify-content:flex-start; gap:8px">
+            <a class="btn btn-primary" href="#contacto">Solicitar visita</a>
+            <a class="btn btn-ghost" href="#precios">Ver precios</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://dummyimage.com/640x400/1b2642/ffffff&text=Sala+de+bombas" alt="Sala de bombas" />
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="testimonials container" aria-label="Testimonios">
+      <div class="grid-3">
+        <figure class="quo">
+          <blockquote>“Servicio rápido y ordenado; normalizaron la presión del edificio.”</blockquote>
+          <figcaption class="who"><span class="avatar" aria-hidden="true"></span> Comité de Administración</figcaption>
+        </figure>
+        <figure class="quo">
+          <blockquote>“Excelente comunicación y reportes después de cada trabajo.”</blockquote>
+          <figcaption class="who"><span class="avatar" aria-hidden="true"></span> Administración Edificio</figcaption>
+        </figure>
+        <figure class="quo">
+          <blockquote>“Recomendados para emergencias eléctricas de bombas.”</blockquote>
+          <figcaption class="who"><span class="avatar" aria-hidden="true"></span> Mayordomo</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PRECIOS -->
+    <section class="pricing container" id="precios" aria-label="Precios">
+      <div class="grid-3">
+        <div class="plan">
+          <h3>Visita técnica</h3>
+          <p class="price">$0</p>
+          <ul class="list">
+            <li><span class="check">✓</span> Diagnóstico inicial</li>
+            <li><span class="check">✓</span> Recomendaciones</li>
+            <li><span class="check">✓</span> Presupuesto</li>
+          </ul>
+          <a class="btn btn-primary" href="#contacto">Agendar</a>
+        </div>
+        <div class="plan" style="border-color:#2e835b">
+          <h3>Mantención mensual</h3>
+          <p class="price">Desde $XXX.XXX</p>
+          <ul class="list">
+            <li><span class="check">✓</span> Checklist + reporte</li>
+            <li><span class="check">✓</span> Ajustes menores</li>
+            <li><span class="check">✓</span> Prioridad de atención</li>
+          </ul>
+          <a class="btn btn-primary" href="#contacto">Cotizar</a>
+        </div>
+        <div class="plan">
+          <h3>Proyectos</h3>
+          <p class="price">A medida</p>
+          <ul class="list">
+            <li><span class="check">✓</span> Modernizaciones</li>
+            <li><span class="check">✓</span> Reemplazo de equipos</li>
+            <li><span class="check">✓</span> Entrega con pruebas</li>
+          </ul>
+          <a class="btn btn-ghost" href="#contacto">Conversemos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEAD MAGNET / CTA -->
+    <section class="lead container" aria-label="Llamado principal">
+      <h2>¿Listos para normalizar su sala de bombas?</h2>
+      <p class="sub">Escríbenos y coordinamos visita sin costo.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#contacto">Contáctanos</a>
+      </div>
+    </section>
+
+    <!-- CONTACTO / FORMULARIO -->
+    <section class="contact container" id="contacto" aria-label="Formulario de contacto">
+      <h2>Contáctanos</h2>
+      <p class="sub">Respondemos normalmente en menos de 24 horas.</p>
+      <form id="leadForm" action="#" method="post">
+        <div>
+          <label for="name">Nombre</label>
+          <input id="name" name="name" placeholder="Tu nombre" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required />
+        </div>
+        <div>
+          <label for="msg">Mensaje</label>
+          <textarea id="msg" name="msg" rows="4" placeholder="Cuéntanos qué necesitas"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Enviar</button>
+        <p id="ok" role="status" style="display:none; color:#19aee6; margin:8px 0 0">¡Gracias! Te contactaremos pronto.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+      <small>© <span id="year"></span> Hidromantención. Todos los derechos reservados.</small>
+      <small><a href="#">Privacidad</a> · <a href="#">Términos</a></small>
+    </div>
+  </footer>
+
+  <script>
+    // año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // manejo simple del formulario (simulado)
+    const form = document.getElementById('leadForm');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      console.log('Lead enviado:', data);
+      form.reset();
+      document.getElementById('ok').style.display = 'block';
+      // Reemplaza con fetch a Formspree/Getform/Netlify Forms o tu backend
+    });
+  </script>
+</body>
+</html>
